@@ -14,8 +14,18 @@ Install
  
  1. Нужен предустановленный Docker
 
- 2. Далее клонируем репозиторий либо руками скачиваем Dockerfile и выполняем - ```docker build -t imapsync .```
-
- 3. Запускаем наш контейнер, вот так - ```docker run -it imapsync /bin/bash```
+ 2. Билдим образ 
+   ```bash
+    docker build -t dvinogradow/imapsync:latest .
+    ```
  
- 4. Внутри контейнера запускаем ```imapsync``` и с радостью переносим почту.
+ 3. Юзаем примерно так:
+    ```bash
+        docker run dvinogradow/imapsync:latest \
+            --host1 server1 \
+            --user1 user1@server1 \
+            --password1 user1password \
+            --host2 server2 \
+            --user2 user1@server2 \
+            --password2 user2password
+    ```
