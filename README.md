@@ -15,12 +15,14 @@ Install
  1. Нужен предустановленный Docker
 
  2. Билдим образ 
-   ```bash
+
+```bash
     docker build -t dvinogradow/imapsync:latest .
-    ```
+```
  
  3. Юзаем примерно так:
-    ```bash
+
+```bash
         docker run dvinogradow/imapsync:latest \
             --host1 server1 \
             --user1 user1@server1 \
@@ -28,4 +30,4 @@ Install
             --host2 server2 \
             --user2 user1@server2 \
             --password2 user2password
-    ```
+```
