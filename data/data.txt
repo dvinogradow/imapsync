@@ -1,5 +1,3 @@
-imap.beget.ru;test@zhuykovkb.com;[@&?5@6f;imap.beget.ru;unaskok240@zhuykovkb.com;V!MwjNqe7Bf%^vD
-imap.beget.ru;test@zhuykovkb.com;[@&?5@6f;imap.beget.ru;ox34r34349@zhuykovkb.com;yN%6lKeWWYjl4C3
-imap.beget.ru;test@zhuykovkb.com;[@&?5@6f;imap.beget.ru;box34r34349c@zhuykovkb.com;!nwXxEjMqBd1BCo
-imap.beget.ru;test@zhuykovkb.com;[@&?5@6f;imap.beget.ru;box34r34r@zhuykovkb.com;CokaRVu9LAeOImz
-imap.beget.ru;test@zhuykovkb.com;[@&?5@6f;imap.beget.ru;3456@zhuykovkb.com;6NXJFFSMeMyzYDI
+host001_1;user001_1;password001_1;host001_2;user001_2;password001_2
+host002_1;user002_1;password002_1;host002_2;user002_2;password002_2
+host003_1;user003_1;password003_1;host003_2;user003_2;password003_2

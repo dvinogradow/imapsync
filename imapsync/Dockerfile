@@ -23,7 +23,7 @@ RUN apt-get -qq -y install          \
         libunicode-string-perl      \
         liburi-perl                 \
         libssl-dev                  \
-        python                      \
+        python3                     \
         make                        \
         gcc                         \
         cpanminus                   \
@@ -39,16 +39,14 @@ RUN cpanm -q                \
         LWP                 \
         Sys::MemInfo
 
-ADD entrypoint.sh /entrypoint.sh
 
-RUN git clone https://github.com/imapsync/imapsync.git /home/imapsync
-
-RUN ln -s /home/imapsync/imapsync /usr/local/sbin
+ADD parc.py /usr/local/sbin
+ADD imapsync /usr/local/sbin
 
 VOLUME /data
-
 WORKDIR /data
 
-ENTRYPOINT ["/entrypoint.sh"]
+#RUN git clone https://github.com/imapsync/imapsync.git /home/imapsync
+#RUN ln -s /home/imapsync/imapsync /usr/local/sbin
 
-CMD ["noop"]
+ENTRYPOINT ["parc.py"]

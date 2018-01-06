@@ -1,10 +1,9 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 import subprocess
-import time
 
 IMAPSYNC = "/usr/local/sbin/imapsync"
 
-file = open("data.txt","r")
+file = open("data.txt", "r")
 string = file.readline()
 
 while string:
@@ -22,8 +21,6 @@ while string:
         user2 = fields[4]
         password2 = fields[5]
      
-        time.sleep(3)
-        
         print(server1 + " " + user1 + " " + password1 + " " + server2 + " " + user2 + " " + password2)
 
         cmd = [IMAPSYNC, "--host1", "{}".format(server1), "--user1", "{}".format(user1), "--password1", "{}".format(password1), "--host2", "{}".format(server2), "--user2", "{}".format(user2), "--password2", "{}".format(password2), "--no-modulesversion"]
@@ -32,4 +29,5 @@ while string:
         result = subprocess.check_call(cmd)
 
 file.close()
-print("--- END SYNC ---"")
+print("--- END SYNC ---")
+#EOF
