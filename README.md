@@ -8,8 +8,8 @@ See imapsync on github for more information and options: https//github.com/imaps
 Requirements
 ============
 
-    * [Docker](https://docs.docker.com/installation/#installation)
-    * [Docker Compose](https://docs.docker.com/compose/)
+  * [Docker](https://docs.docker.com/installation/#installation)
+  * [Docker Compose](https://docs.docker.com/compose/)
 
 
 Configure and sync
