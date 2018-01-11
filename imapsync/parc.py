@@ -6,9 +6,16 @@ IMAPSYNC = "/usr/local/sbin/imapsync"
 file = open("data.txt", "r")
 string = file.readline()
 
+def run(cmd, logfile):
+    p = subprocess.Popen(cmd, shell=True, universal_newlines=True, stdout=logfile)
+    ret_code = p.wait()
+    logfile.flush()
+
+    return ret_code
+
 while string:
     string = file.read().splitlines()
-    if string == '':
+    if not string:
         break
     for line in string:
 
@@ -21,13 +28,13 @@ while string:
         user2 = fields[4]
         password2 = fields[5]
      
-        print(server1 + " " + user1 + " " + password1 + " " + server2 + " " + user2 + " " + password2)
 
-        cmd = [IMAPSYNC, "--host1", "{}".format(server1), "--user1", "{}".format(user1), "--password1", "{}".format(password1), "--host2", "{}".format(server2), "--user2", "{}".format(user2), "--password2", "{}".format(password2), "--no-modulesversion"]
-        print(cmd)
+        cmdstr = IMAPSYNC + " --host1 {0} --user1 {1} --password1 {2} --host2 {3} --user2 {4} --password2 {5} --no-modulesversion".format(server1, user1, password1, server2, user2, password2)
+        print(cmdstr)
 
-        result = subprocess.check_call(cmd)
-
+        file_logs = open("/data/logs.txt", "a")
+        result = run(cmdstr, file_logs)
+        file_logs.close()
 file.close()
 print("--- END SYNC ---")
 #EOF

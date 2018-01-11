@@ -26,9 +26,7 @@ RUN apt-get -qq -y install          \
         python3                     \
         make                        \
         gcc                         \
-        cpanminus                   \
-        git                         \
-        vim
+        cpanminus
 
 RUN cpanm -q                \
         Mail::IMAPClient    \
@@ -45,8 +43,5 @@ ADD imapsync /usr/local/sbin
 
 VOLUME /data
 WORKDIR /data
-
-#RUN git clone https://github.com/imapsync/imapsync.git /home/imapsync
-#RUN ln -s /home/imapsync/imapsync /usr/local/sbin
 
 ENTRYPOINT ["parc.py"]

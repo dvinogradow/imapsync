@@ -1,4 +1,4 @@
-dockerize_imapsync:
+docker_imapsync:
   build: imapsync/
   volumes:
-    - ./data:/data
+    - "./data:/data"
